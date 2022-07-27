@@ -30,7 +30,8 @@ searchInput.addEventListener("keyup", (e) => {
     const caption = anchors[i].dataset.caption;
     // If isMatch is -1, it's not a match
     // If not a match, set display to none
-    const isMatch = caption.search(e.target.value);
+    const searchValue = e.target.value.toLowerCase();
+    const isMatch = caption.search(searchValue);
     if (isMatch === -1) {
       anchors[i].style.display = "none";
     } else {
